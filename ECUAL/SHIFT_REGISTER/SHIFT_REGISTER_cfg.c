@@ -1,5 +1,5 @@
 /*
- * File: SHIFT_REGISTER.c
+ * File: SHIFT_REGISTER_cfg.c
  * SW Layer:   ECUAL
  * Created on: Aug 26, 2024
  * Author:     Adit Raditya Mekka
