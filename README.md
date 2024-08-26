@@ -1,4 +1,4 @@
-# STM32_74HC595_Library
+# STM32 74HC595 Library
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 * a library to interface stm32 with 74hc595 shiftregisters.
 
