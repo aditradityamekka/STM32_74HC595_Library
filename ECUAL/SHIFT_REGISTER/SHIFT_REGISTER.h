@@ -14,6 +14,6 @@
 #include "stdint.h"
 #include "SHIFT_REGISTER_cfg.h"
 
-void shiftRegister(uint8_t data);
+void shiftRegister(uint64_t data);
 
 #endif /* SHIFT_REGISTER_H_ */

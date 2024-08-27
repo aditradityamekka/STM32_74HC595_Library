@@ -14,5 +14,5 @@ const shiftReg_CfgType shiftReg_CfgParam = {
 	GPIOB, GPIO_PIN_8,	//Data pin config
 	GPIOB, GPIO_PIN_6,	//Clock pin ocnfig
 	GPIOB, GPIO_PIN_7,	//Latch pin config
-	1					//Number of register or daisy chained registers
+	2					//Number of register or daisy chained registers
 };

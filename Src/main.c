@@ -36,13 +36,25 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+#define redAlert 0b0110110110111111
+#define numStates 8
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint16_t trafficStates[numStates] = {
+	0b1100110110111111,
+	0b1010110110111111,
+	0b0111100110111111,
+	0b0111010110111111,
+	0b0110111100111111,
+	0b0110111010111111,
+	0b0110110111101111,
+	0b0110110111011111
+};
 
+uint32_t delayPattern[2] = {5000, 3000};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -54,7 +66,17 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void trafficLight(void){
+	static uint32_t lastTick = 0;
+	static uint8_t currentState = 0;
+	uint32_t currentTick = HAL_GetTick();
 
+	if(currentTick - lastTick >= delayPattern[currentState % 2]){
+		lastTick = currentTick;
+		shiftRegister(trafficStates[currentState]);
+		currentState = (currentState + 1) % numStates;
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -95,7 +117,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  shiftRegister(0xAA);
+	  trafficLight();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
