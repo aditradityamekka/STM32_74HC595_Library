@@ -3,8 +3,8 @@
 * a library to interface stm32 with 74hc595 shiftregisters.
 
 ## Description
-* This is a 74HC595 library to use the 74HC595 shiftregister in stm32 bluepill without mosi
-* I make this because i'm bored even tho it is kinda pointless?.
+* This is a 74HC595 library to use the 74HC595 shiftregister with STM32 BluePill
+* This library can control up to 8 daisy chained shift registers.
 
 ## How to use 
 * You can change all pinout and how many register you use in ECUAL/SHIFT_REGISTER/SHIFT_REGISTER_cfg.c
